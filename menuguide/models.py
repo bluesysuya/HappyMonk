@@ -7,8 +7,8 @@ from django.db import models
 
 
 ## 수정 필요 사항
-# 1. 맥주 분류 Choice 항목 추가
-# 2. 국가 Choice 항목 추가
+# Cocktail, SideDish는 Country 항목이 필요없다.
+# 상속받은 Class에서 해당 항목을 삭제 또는 없애는 방법? (Null Data 처리?)
 
 class MenuBase(models.Model):
     BEER_KIND = (
