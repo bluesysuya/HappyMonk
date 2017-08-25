@@ -15,11 +15,21 @@ class MenuBase(models.Model):
         "Lager", "Ale", "Stout", "IPA"
     )
     COUNTRY_LIST = (
-        "USA", "United Kingdom", "Ireland", "Belgium"
+        "USA", "Ireland", "Belgium"
+    )
+    BASE_KIND = (
+        "Vodka", "Gin", "Rum", "Whisky"
+    )
+    WINE_KIND = (
+        "Red", "White", "Sparkling"
+    )
+    WINE_STYLE = (
+        "Dry", "Sweet"
+    )
+    SIDEDISH_KIND = (
+        "Pizza", "Salad", "Fried"
     )
     name = models.CharField(max_length=30)
-    kind = models.CharField(max_length=1, choices=BEER_KIND)
-    alc = models.IntegerField()
     country = models.CharField(max_length=1, choices=COUNTRY_LIST)
     description = models.TextField()
     Picture = models.ImageField(
@@ -28,27 +38,20 @@ class MenuBase(models.Model):
     )
 
 class DraftBeer(MenuBase):
-    pass
+    kind = models.CharField(max_length=1, choices=BEER_KIND)
+    alc = models.IntegerField()
 
 class BottleBeer(MenuBase):
-    pass
+    kind = models.CharField(max_length=1, choices=BEER_KIND)
+    alc = models.IntegerField()
 
 class Cocktail(MenuBase):
-    base = models.CharField(max_length=30)
+    base = models.CharField(max_length=30, choices=BASE_KIND)
     ingredients = models.TextField()
 
 class Wine(MenuBase):
-    WINE_KIND = (
-        "Red", "White", "Sparkling"
-    )
-    WINE_STYLE = (
-        "Dry", "Sweet"
-    )
     kind = models.CharField(max_length=1, choices=WINE_KIND)
-    style = models.CharField(max_length=30)
+    style = models.CharField(max_length=30, choices=WINE_STYLE)
 
 class SideDish(MenuBase):
-    SIDEDISH_KIND = (
-        "Pizza", "Salad", "Fried"
-    )
     kind = models.CharField(max_length=1, choices=SIDEDISH_KIND)
