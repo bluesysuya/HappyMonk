@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "# HappyMonk"
 
 **Happy Monk - The world best sea pub**
