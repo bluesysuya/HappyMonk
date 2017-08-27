@@ -23,7 +23,10 @@
 
 **Todo**
 
-[ ] model 통합 후 상속 사용
-[ ] choices 사용을 위한 list들은 class 밖으로 빼기
-[ ] admin list_display로 입력항목 순서 정렬
-[ ] list_filter로 type별로 구분하여 확인 및 입력 가능하도록 만들기
+[] model 통합 후 상속 사용
+
+[] choices 사용을 위한 list들은 class 밖으로 빼기
+
+[] admin list_display로 입력항목 순서 정렬
+
+[] list_filter로 type별로 구분하여 확인 및 입력 가능하도록 만들기
